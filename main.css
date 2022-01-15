@@ -244,7 +244,7 @@ h2 {
   letter-spacing: 2px;
   font-weight: 900;
   width: clamp(18rem, 80vw, 50rem);
-  margin: clamp(6rem, 7vw, 7rem) auto 3rem;
+  margin: clamp(6rem, 9vw, 9rem) auto 3rem;
 }
 
 
