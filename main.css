@@ -196,8 +196,8 @@ h2 {
 .go_down {
   display: block;
   margin: 3rem auto;
-  width: 0.7rem;
-  height: 0.7rem;
+  width: 0.6rem;
+  height: 0.6rem;
   transform: rotate(45deg) translateY(0);
   border-bottom: 0.25rem solid white;
   border-right: 0.25rem solid white;
@@ -463,6 +463,7 @@ footer {
   text-transform: uppercase;
   letter-spacing: 3px;
   font-size: 0.7rem;
+  line-height: 1.2rem;
 }
 
 .social_icon_anchor {
