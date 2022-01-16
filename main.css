@@ -21,7 +21,7 @@ h6 {
   --c3: #f2b711;
   --c3a:#d2d89a;
   --c4: #ea2f96;
-  --c4a:#9b1f67;
+  --c4a:#a51c6c;
 }
 
 html {
@@ -90,7 +90,7 @@ img {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: var(--c2);
+  background: var(--c4);
   border-radius: 1rem;
 }
 
@@ -162,7 +162,7 @@ header a {
 
 .intro_text {
   text-align: center;
-  margin: clamp(4rem, 12vw, 10rem) 0 clamp(4rem, 7vw, 7rem) 0;
+  margin: clamp(4rem, 12vw, 5rem) 0 clamp(4rem, 7vw, 7rem) 0;
 } .colored_text {
   background-image: -webkit-linear-gradient(210deg, var(--c2), var(--c3), var(--c4));
   -webkit-background-clip: text;
@@ -473,6 +473,7 @@ footer {
 }
 .social_icon_anchor a {
   width: 1.4rem;
+  height: 1.3rem;
   margin-top: 1rem;
   transition: transform 0.5s ease;
   display: flex;
@@ -492,14 +493,14 @@ footer {
 
 
 
-@media (min-width:800px) and (min-height:500px) {
+@media (min-width:700px) and (min-height:500px) {
   header {
     flex-direction: row;
     justify-content: center;
     gap: 3rem;
-    margin: 2rem 0 1rem 0;
+    margin: 4.5rem 0 0 0;
   }.header_logo {
-    width: 15rem;
+    width: 16rem;
   } header a {
     position: relative;
     bottom: 0.1rem;
@@ -521,5 +522,22 @@ footer {
   footer nav > a:hover {
     transition: background-color 0.05s ease;
     background-color:rgba(255,255,255,0.1)
+  }
+}
+
+
+
+
+@media (min-width:1920px) {
+  html {
+      font-size:20px;
+  }
+} @media (min-width:2440px) {
+  html {
+      font-size:24px;
+  }
+} @media (min-width:3000px) {
+  html {
+      font-size:32px;
   }
 }
