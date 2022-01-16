@@ -113,6 +113,18 @@ img {
   -webkit-mask-image: linear-gradient(180deg, black 62%, transparent);
 }
 
+.video_bg {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  height: 90vh;
+  z-index: -1;
+  opacity: 0.1;
+  mix-blend-mode: color-dodge;
+  pointer-events: none;
+  object-fit: cover;
+}
+
 main {
   width: clamp(20rem, 90vw, 75rem);
   margin: 0 auto;
@@ -149,7 +161,8 @@ header a {
   background-image: -webkit-linear-gradient(210deg, var(--c2), var(--c3), var(--c4));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 0 0.4rem #515140);
+  filter: drop-shadow(0 0 0.3rem #474736);
+  filter: drop-shadow(0 0 clamp(0.3rem, 1vw, 0.4rem) #474736);
 }
 
 
@@ -406,7 +419,7 @@ footer {
   letter-spacing: 2px;
   text-align: left;
 } footer nav a {
-  padding: 0 1rem;
+  padding: 0 0 0 1rem;
 } .footer_logo {
   width: clamp(16rem, 60vw, 18rem);
   display: block;
@@ -420,7 +433,15 @@ footer {
   font-size: 0.7rem;
 }
 
-
+.social_icon_anchor {
+  display:flex;
+}
+.social_icon_anchor a {
+  width: 1.6rem;
+  margin-top: 1rem;
+} .social_icon_anchor img {
+  width:100%;
+}
 
 
 
@@ -456,7 +477,7 @@ footer {
   footer nav a {
     transition: background-color 0.5s ease;
   }
-  footer nav a:hover {
+  footer nav > a:hover {
     transition: background-color 0.05s ease;
     background-color:rgba(255,255,255,0.1)
   }
