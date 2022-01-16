@@ -121,36 +121,35 @@ main {
 header {
   display: flex;
   flex-direction: column-reverse;
+  align-items: center;
   margin: 2rem 0;
 }
 .header_logo {
-  width: clamp(17rem, 80vw, 20rem);
-  margin: 2rem auto;
+  width: clamp(17rem, 80vw, 21rem);
+  margin: 2rem 0;
   display: block;
 }
-header nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
-  width: clamp(17rem, 80vw, 20rem);
-  margin: 0 auto;
-}
-header nav a {
-  font-size: clamp(0.8rem, 3vw, 0.9rem);
+header a {
+  font-weight: 600;
+  font-size: 0.8rem;
   letter-spacing: 1px;
   white-space: nowrap;
-}
-header nav a.gradient_border {
   position: relative;
   background-color: var(--dark);
-  padding: 0.4rem 1rem;
+  padding: 0.6rem 1.4rem;
   border-radius: 0.3rem;
+  text-align: center;
+  align-self: center;
 }
 
 .intro_text {
   text-align: center;
   margin: clamp(4rem, 12vw, 11rem) 0;
+} .colored_text {
+  background-image: -webkit-linear-gradient(210deg, var(--c2), var(--c3), var(--c4));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 0.4rem #515140);
 }
 
 
@@ -165,20 +164,21 @@ h1 {
   text-transform: uppercase;
   font-weight: 900;
   font-size: clamp(2.8rem, 12vw, 4.5rem);
-  line-height: clamp(3.4rem, 14vw, 4.5rem);
+  line-height: clamp(3.4rem, 13vw, 4.5rem);
   margin: 0 auto;
 }
 h2 {
   color: var(--c2);
-  font-size: clamp(1.2rem, 5vw, 1.4rem);
-  margin: 1rem auto 1.4rem auto;
+  font-size: clamp(1.2rem, 5vw, 1.3rem);
+  margin: 1rem auto 2rem auto;
   font-weight: 500;
 }
 
 .intro_cta_ctnr, .learn_more_div {
   display: flex;
+  flex-flow: row wrap;
   justify-content: center;
-  gap: 1rem;
+  gap: 1.4rem;
 }
 
 .intro_cta_ctnr a {
@@ -186,20 +186,30 @@ h2 {
 }
 
 .intro_cta_ctnr a, .learn_more_div a {
-  padding: 0.8rem 1.2rem;
-  background: var(--light);
-  border-radius: 0.5rem;
+  padding: 0.8rem 2rem;
+  background: rgba(255,255,255,0.04);
+  border-radius: 0.3rem;
   display: flex;
   justify-content: center;
   gap: 1rem;
-  color: var(--c1);
+  color: var(--light);
   align-items: center;
-  font-weight: 600;
   transition: background-color 0.5s ease, color 0.5s ease;
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
+  font-size: 0.9rem;
 }
 
-.intro_cta_ctnr a img, .learn_more_div a img {
-  width: 1rem;
+.external_anchor_icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0.4rem;
+  height: 0.4rem;
+  border-top: 0.1rem solid var(--light);
+  border-right: 0.1rem solid var(--light);
 }
 
 .info_bullets {
@@ -210,13 +220,14 @@ h2 {
   align-items: center;
   margin: 4rem auto;
   text-align: center;
-  width: clamp(20rem, 75vw, 75rem);
+  width: clamp(20rem, 80vw, 75rem);
+  align-items: stretch;
 }
 
 .info_bullets > div {
   position: relative;
   background: var(--dark);
-  padding: 1.4rem 0.5rem;
+  padding: 1.4rem clamp(1rem, 3vw, 2rem);
   width: 100%;
   border-radius: 0.8rem;
   width: clamp(14rem, 60vw, 14rem);
@@ -226,6 +237,7 @@ h2 {
   color: var(--c2);
   letter-spacing: 2px;
   font-size: 0.9rem;
+  flex: 1;
 }
 .info_bullets > div::before {
   border-radius: 0.8rem;
@@ -275,12 +287,12 @@ h2 {
 } .features1 > div {
   padding: 2.5rem 0;
   border-radius: 1rem;
-  background-color: rgba(255,255,255,0.05);
+  background-color: rgba(255,255,255,0.04);
   width: clamp(20rem, 80vw, 26rem);
   transition: background-color 0.5s ease;
 } .features1 > div:hover {
   transition: background-color 0.05s ease;
-  background-color: rgba(255,255,255,0.1);
+  background-color: rgba(255,255,255,0.08);
 } .features1 img {
   width: clamp(9rem, 10vw, 20rem);
 } .features1 h4 {
@@ -294,17 +306,19 @@ h2 {
 } .features1 a {
   position: relative;
   font-size: 0.7rem;
-  background-color: #26212f;
+  background-color: var(--dark);
   padding: 0.5rem 0.9rem;
   margin: 1rem 0;
   display: inline;
   z-index: 2;
   line-height: 3rem;
-  border-radius: 0.6rem;
+  border-radius: 0.3rem;
   letter-spacing: 2px;
   font-weight: 600;
+} .features1 .coming a {
+  background-color: #26212f;
 } .features1 a::before {
-  border-radius: 0.6rem;
+  border-radius: 0.3rem;
 } .features1 .coming img {
     filter: blur(10px);
 } .features1 .coming a {
@@ -316,7 +330,7 @@ h2 {
 .features2 {
   display: flex;
   flex-flow: row wrap;
-  gap: 5rem 4vw;
+  gap: 4.5rem 4vw;
   margin: clamp(3rem, 4vw, 4rem) 0;
   justify-content: center;
 } .features2 > div {
@@ -327,10 +341,10 @@ h2 {
   flex-direction: column;
   justify-content: center;
   gap: 0.4rem;
-  padding: 0 2rem;
+  padding: 0 2rem 1rem 2rem;
   border-radius: 1.5rem;
   margin: 0 auto;
-  height: clamp(20rem, 25vw, 30rem);
+  height: 12rem;
   transition: background-color 0.5s ease;
 } .features2 > div:hover {
   transition: background-color 0.05s ease;
@@ -356,15 +370,12 @@ h2 {
   font-size: 0.75rem;
   letter-spacing: 1px;
   transition: color 0.5s ease, background-color 0.5s ease;
-} .features2 a:hover, .intro_cta_ctnr a:hover, .learn_more_div a:hover {
+} .intro_cta_ctnr a:hover, .learn_more_div a:hover {
   transition: color 0.05s ease, background-color 0.05s ease;
-  background-color:#39beeb;
-  color: var(--light);
+  background-color:rgba(255,255,255,0.1);
 }
 
-.learn_more_div {
-  flex-flow: row wrap;
-} .learn_more_div a {
+.learn_more_div a {
   width: clamp(15rem, 10vw, 20rem);
   height: clamp(2rem, 3vw, 5rem);
   position: relative;
@@ -376,7 +387,7 @@ h2 {
 footer {
   border-top: 0.4rem solid var(--light);
   margin-top: clamp(2rem, 10vw, 7rem);
-  padding: clamp(2rem, 10vw, 3rem) 0 clamp(2rem, 20vw, 13rem) 0;
+  padding: clamp(2rem, 10vw, 3rem) 0 clamp(2rem, 20vw, 10rem) 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -423,8 +434,13 @@ footer {
 @media (min-width:800px) and (min-height:500px) {
   header {
     flex-direction: row;
+    justify-content: center;
+    gap: 3rem;
   }.header_logo {
     width: 15rem;
+  } header a {
+    position: relative;
+    top: 0.2rem;
   }
 
   .features2 > div {
