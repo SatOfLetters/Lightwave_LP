@@ -80,7 +80,7 @@ img {
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 10px;
 }
 
 /* Track */
@@ -90,7 +90,8 @@ img {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #ffffff;
+  background: var(--c2);
+  border-radius: 1rem;
 }
 
 .gradient_border::before {
@@ -119,7 +120,7 @@ img {
   top: 0;
   height: 90vh;
   z-index: -1;
-  opacity: 0.1;
+  opacity: 0.15;
   mix-blend-mode: color-dodge;
   pointer-events: none;
   object-fit: cover;
@@ -138,7 +139,7 @@ header {
 }
 .header_logo {
   width: clamp(17rem, 80vw, 21rem);
-  margin: 2rem 0;
+  margin: 1.5rem 0 2rem 0;
   display: block;
 }
 header a {
@@ -148,15 +149,20 @@ header a {
   white-space: nowrap;
   position: relative;
   background-color: var(--dark);
-  padding: 0.6rem 1.4rem;
+  padding: 0 1.4rem;
   border-radius: 0.3rem;
   text-align: center;
   align-self: center;
+  display: table;
+  height: 2.5rem;
+} header a span {
+  vertical-align: middle;
+  display: table-cell;
 }
 
 .intro_text {
   text-align: center;
-  margin: clamp(4rem, 12vw, 11rem) 0;
+  margin: clamp(4rem, 12vw, 10rem) 0 clamp(4rem, 7vw, 7rem) 0;
 } .colored_text {
   background-image: -webkit-linear-gradient(210deg, var(--c2), var(--c3), var(--c4));
   -webkit-background-clip: text;
@@ -185,6 +191,29 @@ h2 {
   font-size: clamp(1.2rem, 5vw, 1.3rem);
   margin: 1rem auto 2rem auto;
   font-weight: 500;
+}
+
+.go_down {
+  display: block;
+  margin: 3rem auto;
+  width: 0.7rem;
+  height: 0.7rem;
+  transform: rotate(45deg) translateY(0);
+  border-bottom: 0.25rem solid white;
+  border-right: 0.25rem solid white;
+  animation: go_down 3s ease-in-out infinite;
+}
+
+@keyframes go_down {
+  0% {
+    transform:rotate(45deg) translate(0);
+  } 38% {
+    transform:rotate(45deg) translate(-0.3rem, -0.3rem);
+  } 50% {
+    transform:rotate(45deg) translate(0);
+  } 100% {
+    transform:rotate(45deg) translate(0);
+  }
 }
 
 .intro_cta_ctnr, .learn_more_div {
@@ -265,11 +294,11 @@ h2 {
 .title_desc {
   text-align: center;
   text-transform: uppercase;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   letter-spacing: 2px;
   font-weight: 900;
-  width: clamp(18rem, 80vw, 50rem);
-  margin: clamp(6rem, 9vw, 9rem) auto 3rem;
+  width: clamp(15rem, 60vw, 50rem);
+  margin: 6rem auto 3rem;
 }
 
 
@@ -374,7 +403,7 @@ h2 {
   text-align: center;
   position: absolute;
   bottom: 0;
-  transform: translateY(50%);
+  transform: translateY(50%) scale(1);
   background-color: var(--light);
   padding: 1rem 1.8rem;
   border-radius: 0.6rem;
@@ -382,7 +411,10 @@ h2 {
   font-weight: 600;
   font-size: 0.75rem;
   letter-spacing: 1px;
-  transition: color 0.5s ease, background-color 0.5s ease;
+  transition: transform 0.3s ease;
+} .features2 a:hover {
+  transition: transform 0.1s ease;
+  transform: translateY(50%) scale(1.05);
 } .intro_cta_ctnr a:hover, .learn_more_div a:hover {
   transition: color 0.05s ease, background-color 0.05s ease;
   background-color:rgba(255,255,255,0.1);
@@ -399,8 +431,8 @@ h2 {
 
 footer {
   border-top: 0.4rem solid var(--light);
-  margin-top: clamp(2rem, 10vw, 7rem);
-  padding: clamp(2rem, 10vw, 3rem) 0 clamp(2rem, 20vw, 10rem) 0;
+  margin-top: clamp(6rem, 10vw, 11rem);
+  padding: clamp(2rem, 10vw, 3rem) 0 clamp(2rem, 20vw, 8rem) 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -435,10 +467,17 @@ footer {
 
 .social_icon_anchor {
   display:flex;
+  grid-column-start: 1;
+  grid-column-end: 3;
 }
 .social_icon_anchor a {
-  width: 1.6rem;
+  width: 1.4rem;
   margin-top: 1rem;
+  transition: transform 0.5s ease;
+  display: flex;
+} .social_icon_anchor a:hover {
+  transition: transform 0.05s ease;
+  transform:scale(1.1);
 } .social_icon_anchor img {
   width:100%;
 }
@@ -457,12 +496,12 @@ footer {
     flex-direction: row;
     justify-content: center;
     gap: 3rem;
-    margin: 1rem 0;
+    margin: 2rem 0 1rem 0;
   }.header_logo {
     width: 15rem;
   } header a {
     position: relative;
-    top: 0.2rem;
+    bottom: 0.1rem;
   }
 
   .features2 > div {
